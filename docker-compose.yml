@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+  selenium:
+    image: selenium/standalone-chrome
+    volumes:
+      - /dev/shm:/dev/shm
+  scraping:
+    image: docker-scraping
+    build: ./build/scraping
+    volumes:
+      - .:/var/lib/python3
+    entrypoint:
+      - docker-entrypoint.sh
+    depends_on:
+      - selenium
