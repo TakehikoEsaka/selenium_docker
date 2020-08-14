@@ -1,6 +1,19 @@
-1597409185959	geckodriver	INFO	Listening on 127.0.0.1:33917
-1597409185964	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejTPPVN"
+1597410882872	geckodriver	INFO	Listening on 127.0.0.1:37523
+1597410882878	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehFkBiP"
 console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
-1597409188977	Marionette	INFO	Listening on port 41401
-1597409189076	Marionette	WARN	TLS certificate errors will be ignored for this session
-1597409193192	Marionette	INFO	Stopped listening on port 41401
+1597410885825	Marionette	INFO	Listening on port 39631
+1597410885894	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1597411095026	Marionette	INFO	Stopped listening on port 39631
+1597411282760	geckodriver	INFO	Listening on 127.0.0.1:60743
+1597411282765	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewE2do7"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597411285545	Marionette	INFO	Listening on port 35245
+1597411285575	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://demo.guru99.com/test/upload/, line 61: ReferenceError: archive_analytics is not defined
+JavaScript error: http://demo.guru99.com/test/upload/, line 177: TypeError: $spk is null
+[Child 7705, MediaDecoderStateMachine #1] WARNING: Decoder=7f5d635d0800 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<MediaSourceTrackDemuxer::SamplesPromise> mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-39iLDY/firefox-79.0+build1/dom/media/MediaDecoderStateMachine.cpp, line 3470
+[Child 7705, MediaDecoderStateMachine #1] WARNING: Decoder=7f5d635d0800 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<MediaSourceTrackDemuxer::SamplesPromise> mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-39iLDY/firefox-79.0+build1/dom/media/MediaDecoderStateMachine.cpp, line 3470
+[Child 7705, MediaDecoderStateMachine #1] WARNING: Decoder=7f5d635d0800 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<MediaSourceTrackDemuxer::SamplesPromise> mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-39iLDY/firefox-79.0+build1/dom/media/MediaDecoderStateMachine.cpp, line 3470
