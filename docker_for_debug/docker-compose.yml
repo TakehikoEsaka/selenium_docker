@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  hub:
+    container_name: "selenium_hub"
+    image: selenium/hub
+    ports:
+      - 4444:4444
+
+  chrome:
+    ## standaloneのimageだとWebdriver周りでおこられた
+    image: selenium/node-chrome-debug
+    container_name: "chrome"
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=hub
+      - HUB_PORT_4444_TCP_PORT=4444
+    ports:
+      - 5900:5900
+    depends_on:
+      - hub
+  
+  python:
+    build: .
+    image: my_python3:latest
+    container_name: 'python'
+    links:
+      - hub:hub
+    command: 'tail -f /dev/null'
+    working_dir: '/root/'
+    volumes:
+      - ./tests/:/root/tests/
+    # entrypoint: ./install_selenium.sh
