@@ -9,6 +9,7 @@ services:
 
   chrome:
     ## standaloneのimageだとWebdriver周りでおこられた
+    ## passwordはsecretで入れる
     image: selenium/node-chrome-debug
     container_name: "chrome"
     environment:
@@ -18,15 +19,27 @@ services:
       - 5900:5900
     depends_on:
       - hub
-  
+
   python:
     build: .
     image: my_python3:latest
     container_name: 'python'
     links:
       - hub:hub
-    command: 'tail -f /dev/null'
     working_dir: '/root/'
     volumes:
-      - ./tests/:/root/tests/
-    # entrypoint: ./install_selenium.sh
+      - ./python_tests/:/root/python_tests/
+
+  js:
+    build:
+      context: "./"
+      dockerfile: "Dockerfile_js"
+    image: my_node
+    container_name: 'js'
+    links:
+      - hub:hub
+    # command: 'tail -f /dev/null'
+    working_dir: '/root/'
+    volumes:
+      - ./js_tests/:/root/js_tests/
+    command: /bin/sh -c "while :; do sleep 10; done"  

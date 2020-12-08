@@ -1,0 +1,14 @@
+{
+  "name": "js_tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "expect": "^26.6.2",
+    "gulp-mocha": "^7.0.2",
+    "mocha": "^8.2.1",
+    "selenium-webdriver": "^4.0.0-alpha.8",
+    "test": "^0.6.0"
+  }
+}

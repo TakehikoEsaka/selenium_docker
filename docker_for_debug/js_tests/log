@@ -1,0 +1,29 @@
+thenableWebDriverProxy {
+  session_: Promise { <pending> },
+  executor_: Executor {
+    w3c: false,
+    customCommands_: Map(11) {
+      'launchApp' => [Object],
+      'getNetworkConditions' => [Object],
+      'setNetworkConditions' => [Object],
+      'sendDevToolsCommand' => [Object],
+      'sendAndGetDevToolsCommand' => [Object],
+      'setPermission' => [Object],
+      'getCastSinks' => [Object],
+      'setCastSinkToUse' => [Object],
+      'setCastTabMirroring' => [Object],
+      'getCastIssueMessage' => [Object],
+      'stopCasting' => [Object]
+    },
+    log_: Logger {
+      name_: 'webdriver.http.Executor',
+      level_: null,
+      parent_: [Logger],
+      handlers_: null
+    }
+  },
+  fileDetector_: null,
+  onQuit_: undefined,
+  then: [Function: bound then],
+  catch: [Function: bound catch]
+}
