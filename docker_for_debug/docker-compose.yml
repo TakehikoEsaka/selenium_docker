@@ -1,45 +1,54 @@
 version: '3'
 
 services:
-  hub:
-    container_name: "selenium_hub"
-    image: selenium/hub
-    ports:
-      - 4444:4444
+  #hub:
+  #  container_name: "selenium_hub"
+  #  image: selenium/hub
+  #  ports:
+  #    - 4444:4444
 
-  chrome:
+  #chrome:
     ## standaloneのimageだとWebdriver周りでおこられた
     ## passwordはsecretで入れる
-    image: selenium/node-chrome-debug
-    container_name: "chrome"
-    environment:
-      - HUB_PORT_4444_TCP_ADDR=hub
-      - HUB_PORT_4444_TCP_PORT=4444
-    ports:
-      - 5900:5900
-    depends_on:
-      - hub
+  #  image: selenium/node-chrome-debug
+  #  container_name: "chrome"
+  #  environment:
+  #    - HUB_PORT_4444_TCP_ADDR=hub
+  #    - HUB_PORT_4444_TCP_PORT=4444
+  #  ports:
+  #    - 5900:5900
+  #  depends_on:
+  #    - hub
 
-  python:
-    build: .
-    image: my_python3:latest
-    container_name: 'python'
-    links:
-      - hub:hub
-    working_dir: '/root/'
-    volumes:
-      - ./python_tests/:/root/python_tests/
+  #python:
+  #  build: .
+  #  image: my_python3:latest
+  #  container_name: 'python'
+  #  links:
+  #    - hub:hub
+  #  working_dir: '/root/'
+  #  volumes:
+  #    - ./python_tests/:/root/python_tests/
 
-  js:
+  #js:
+  #  build:
+  #    context: "./"
+  #    dockerfile: "Dockerfile_js"
+  #  image: my_node
+  #  container_name: 'js'
+  #  links:
+  #    - hub:hub
+  # command: 'tail -f /dev/null'
+  #  working_dir: '/root/'
+  #  volumes:
+  #    - ./js_tests/:/root/js_tests/
+  #  command: /bin/sh -c "while :; do sleep 10; done"  
+  
+  js-standalone:
     build:
       context: "./"
-      dockerfile: "Dockerfile_js"
-    image: my_node
-    container_name: 'js'
-    links:
-      - hub:hub
-    # command: 'tail -f /dev/null'
-    working_dir: '/root/'
-    volumes:
-      - ./js_tests/:/root/js_tests/
-    command: /bin/sh -c "while :; do sleep 10; done"  
+      dockerfile: "Dockerfile_js_standalone"
+    container_name: js_standalone
+    volumes: 
+      - ./js_tests/:/home/seluser/js_tests/
+    command: /bin/sh -c "while :; do sleep 10; done"
